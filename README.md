@@ -101,8 +101,8 @@ Two things to know before you start:
   outside apps, and both can cost money. It has had far less testing than the studios.
 - **The Hermes engine against a real agent.** See above.
 - **Canvas** boards live in the browser only. **Horizon** is a preview page.
-- **The offer on the home page** (the `LAUNCH-WEEK` code and the discount badge) is sample
-  marketing. Change it (search the code for `LAUNCH`) before you run this for anyone.
+- **Offers.** No offer is running: the strip above the nav, the pricing banner and the home
+  card's countdown are off. To run one, see `promo` in `src/content/site.ts`.
 
 Each page in `docs/api/` ends with an "Open improvements" list. Those are good first changes.
 

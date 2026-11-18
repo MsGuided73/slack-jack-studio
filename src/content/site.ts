@@ -100,26 +100,37 @@ export const navStudios: NavLink[] = [
 export const pricingBadge = "-17%";
 
 /**
- * The strip above the nav. It counts down to `endsAt` and removes itself after that.
- * Set `enabled` to false to drop it.
+ * An offer with a code and a deadline. While `enabled` is true it shows as the strip above
+ * the nav, a banner on the pricing page and a card on the home page, each counting down to
+ * `endsAt` and removing itself after that.
  *
- * Keep it true. The countdown is real: the code below is seeded by
- * migrations/100_launch.sql with the same end time, and the server refuses it afterwards.
- * To run a new offer, add a migration with the new code and change `id`, `code` and `endsAt`.
+ * It is off: there is no offer running, so none of the three is shown and no code exists.
+ * To run one, add a migration that inserts the code into `account_promo_codes` with the same
+ * end time (so the countdown is the real deadline), fill in `id`, `endsAt`, `code` and `text`
+ * below, and set `enabled` to true.
  */
-export const promo = {
-  enabled: true,
+export const promo: {
+  enabled: boolean;
+  id: string;
+  endsAt: string;
+  code: string;
+  countdownLabel: string;
+  text: string;
+  cta: { label: string; href: string };
+  memberCta: { label: string; href: string };
+} = {
+  enabled: false,
   /** Change this when the offer changes, so people who closed the last one see the new one. */
-  id: "launch-week-2026-11",
-  endsAt: "2026-11-20T08:00:00Z",
-  code: "LAUNCH-WEEK",
+  id: "none",
+  endsAt: "2000-01-01T00:00:00Z",
+  code: "",
   countdownLabel: "Offer ends in",
-  /** Reads as: "Launch week: code LAUNCH-WEEK adds 100 free credits on [logo] SlackJack". */
-  text: "Launch week: code LAUNCH-WEEK adds 100 free credits on",
+  /** Reads as: "<text> [logo] SlackJack", for example "Code EXAMPLE adds 100 free credits on". */
+  text: "",
   cta: { label: "Create your free account", href: routes.join },
   /** For someone who already has an account: straight to the code field in their wallet. */
   memberCta: { label: "Enter your code", href: `${routes.wallet}#promo` },
-} as const;
+};
 
 /** The empty state of each create page: four tiles, two lines, one sentence. */
 export const heroes = {

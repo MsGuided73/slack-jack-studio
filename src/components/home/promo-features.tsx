@@ -60,7 +60,7 @@ function Countdown({ endsAt }: { endsAt: number }) {
   );
 }
 
-/** The pink offer card. Uses the real launch offer from site.ts and drops the timer once it ends. */
+/** The pink offer card. Uses the offer from site.ts, and drops the timer once it ends or while there is none. */
 function PromoCard() {
   const now = useNow();
   const endsAt = Math.floor(Date.parse(promo.endsAt) / 1000);

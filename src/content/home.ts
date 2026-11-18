@@ -31,10 +31,10 @@ export const carouselWords = {
   goTo: (n: number, of: number) => `Slide ${n} of ${of}`,
 };
 
-/** The launch offer card. The code, end time and link come from `promo` in site.ts. */
+/** The offer card. The code, end time and link come from `promo` in site.ts. While no offer runs, `after` shows. */
 export const promoCard = {
   timerLabel: "Offer ends in",
-  lineOne: "Launch week",
+  lineOne: "Limited offer",
   lineTwo: "100 free credits",
   body: (code: string) =>
     `Create your free account and enter the code ${code} to add 100 credits for any studio: images, video, voices and music.`,
