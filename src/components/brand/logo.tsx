@@ -1,34 +1,53 @@
 import { brand } from "@/config/brand";
 import { cn } from "@/ui";
 
+/** The picture files, in `public/brand/`. Both have a clear background, cut for dark pages. */
+const MARK_SRC = "/brand/mark.png";
+const WORDMARK_SRC = "/brand/wordmark.png";
+/** The wordmark picture is 645 wide for every 96 of height. */
+const WORDMARK_RATIO = 645 / 96;
+
 /**
- * The Parallax mark: two slanted bars, the near one solid and the far one faint, on a white
- * tile. It is our own drawing. `size` is the tile's side in pixels (20 in the nav, 18 inline).
+ * The SlackJack mark: the steel and green "SJ" emblem. `size` is its side in pixels
+ * (20 in the nav, 18 inline).
  */
 export function LogoMark({ size = 20, className, title }: { size?: number; className?: string; title?: string }) {
   return (
-    <svg
+    // A fixed-size local picture: next/image would add nothing here.
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={MARK_SRC}
       width={size}
       height={size}
-      viewBox="0 0 20 20"
-      role={title ? "img" : undefined}
-      aria-label={title}
+      alt={title ?? ""}
       aria-hidden={title ? undefined : true}
-      className={cn("shrink-0", className)}
-    >
-      <rect width="20" height="20" rx="6" fill="#FFFFFF" />
-      <path d="M4.5 14.5 8.4 5.5h3.1l-3.9 9z" fill="#131517" />
-      <path d="M10.4 14.5l3.9-9h1.9l-3.9 9z" fill="#131517" fillOpacity="0.45" />
-    </svg>
+      draggable={false}
+      className={cn("shrink-0 object-contain", className)}
+    />
   );
 }
 
-/** The mark with the name beside it, for footers and dialogs. */
+/** The name as its own picture, for places that show the mark and the name together. */
+export function Wordmark({ height = 16, className }: { height?: number; className?: string }) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={WORDMARK_SRC}
+      width={Math.round(height * WORDMARK_RATIO)}
+      height={height}
+      alt={brand.name}
+      draggable={false}
+      className={cn("shrink-0 object-contain", className)}
+    />
+  );
+}
+
+/** The mark with the wordmark beside it, for footers and dialogs. */
 export function Logo({ size = 20, className }: { size?: number; className?: string }) {
   return (
     <span className={cn("inline-flex items-center gap-2", className)}>
       <LogoMark size={size} />
-      <span className="font-display text-base leading-5 font-bold tracking-[-0.01em] text-text-primary">{brand.name}</span>
+      <Wordmark height={Math.round(size * 0.8)} />
     </span>
   );
 }

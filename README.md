@@ -1,4 +1,4 @@
-# Parallax
+# SlackJack
 
 **An open-source AI image, video and audio studio, with an agent chat you can run on your own Hermes agent.**
 
@@ -6,7 +6,7 @@ One web app: studios for pictures, video, voices and music, tools built on top o
 community feed, a library, credits, an API for developers, and Supercomputer, an agent that
 plans and makes things for you.
 
-![The Parallax home page](docs/screenshots/home.png)
+![The SlackJack home page](docs/screenshots/home.png)
 
 It runs with `npm run dev` and nothing else installed. The database is one SQLite file, and
 without a provider key every model answers with a built-in sample file, so you can click
@@ -21,8 +21,8 @@ through the whole product for free.
 You need Node.js 22.13 or newer (the app uses Node's built-in SQLite).
 
 ```bash
-git clone https://github.com/nickvasilescu/parallax.git
-cd parallax
+git clone https://github.com/MsGuided73/slack-jack-studio.git
+cd slack-jack-studio
 npm ci
 PARALLAX_DEMO_SEED=1 npm run dev
 ```
@@ -31,7 +31,7 @@ Open http://localhost:3000. You can try it as a guest with a few credits. Signin
 what you made as a guest.
 
 `PARALLAX_DEMO_SEED=1` fills a new install with four house accounts and about sixty published
-pictures. Every one was made with Parallax, and each post carries the prompt that made it, so
+pictures. Every one was made with SlackJack, and each post carries the prompt that made it, so
 Recreate works on all of them. Nobody can sign in as the demo accounts. Leave the variable
 out for an empty feed.
 
@@ -51,12 +51,12 @@ Supercomputer is the agent chat at `/supercomputer`. It can run on three things:
 | Engine | What answers | Needs |
 |---|---|---|
 | Stand-in (default) | A scripted assistant, so the screens work with no keys | Nothing |
-| Built-in | Parallax runs the agent loop itself | `SUPER_MODE=live` and a model key |
+| Built-in | SlackJack runs the agent loop itself | `SUPER_MODE=live` and a model key |
 | **Hermes** | Your own [Hermes](https://github.com/NousResearch/hermes-agent) agent runs the conversation | A Hermes agent, for example on an [Orgo](https://www.orgo.ai) computer |
 
-With the Hermes engine, the agent does the thinking and Parallax gives it the studio's tools
+With the Hermes engine, the agent does the thinking and SlackJack gives it the studio's tools
 over MCP. When the agent wants a picture, the member gets an approval card with the price and
-pays with their own credits. The generation key never leaves Parallax.
+pays with their own credits. The generation key never leaves SlackJack.
 
 ![A chat running on a Hermes engine](docs/screenshots/supercomputer-hermes.png)
 
@@ -64,14 +64,14 @@ pays with their own credits. The generation key never leaves Parallax.
 
 **Set it up: [`docs/hermes-on-orgo.md`](docs/hermes-on-orgo.md).** It is a step-by-step guide:
 turn on the agent's API server, make two secrets, join the machines, add one entry to the
-agent's config, start Parallax. It also lists what to build next.
+agent's config, start SlackJack. It also lists what to build next.
 
 Two things to know before you start:
 
 - The engine is tested end to end against a stand-in agent. It has not been run against a
   live Hermes agent yet. If you try it, please open an issue with what you found.
-- The agent's own tools (shell, files, memory) are **not** behind Parallax's approval cards.
-  Do not point a public Parallax at a personal agent. The guide explains the safe setup.
+- The agent's own tools (shell, files, memory) are **not** behind SlackJack's approval cards.
+  Do not point a public SlackJack at a personal agent. The guide explains the safe setup.
 
 ## What is in it
 
@@ -86,7 +86,7 @@ Two things to know before you start:
 | `/ads` | Product ad campaigns with rounds and winners |
 | `/canvas` | An open board for laying out pictures and notes (kept in the browser) |
 | `/horizon` | A preview of what comes next: long-form video from one brief |
-| `/guide` | How Parallax works: credits, studios and writing prompts |
+| `/guide` | How SlackJack works: credits, studios and writing prompts |
 | `/supercomputer` | An agent chat that can use a cloud computer and connected apps |
 | `/community`, `/u/<handle>`, `/contests` | Posts, profiles, likes, saves, comments, follows |
 | `/library` | Everything you made or uploaded, with folders and favourites |
@@ -123,7 +123,7 @@ Everything is optional. Put them in `.env.local`.
 | `SUPER_MODE` | `live` lets Supercomputer use the three keys below |
 | `ANTHROPIC_API_KEY`, `ORGO_API_KEY`, `COMPOSIO_API_KEY` | The agent's model, its cloud computer, and its app connections |
 | `SUPER_ENGINE` | `hermes` runs the Supercomputer chat on a Hermes agent instead of the built-in loop |
-| `HERMES_URL`, `HERMES_API_KEY_FILE`, `SUPER_ENGINE_TOKEN_FILE`, `SUPER_ENGINE_NAME` | Where the agent is, its key, the token it uses to call Parallax's tools, and the name members see |
+| `HERMES_URL`, `HERMES_API_KEY_FILE`, `SUPER_ENGINE_TOKEN_FILE`, `SUPER_ENGINE_NAME` | Where the agent is, its key, the token it uses to call SlackJack's tools, and the name members see |
 
 ## Run it for real
 
@@ -170,8 +170,10 @@ at phone size. To run a few: `python3 tests/run.py tests/core_e2e.py tests/ui/ho
 
 ## How this was built
 
-Parallax was built in a day by a swarm of coding agents working from a written product spec
-and a design system, each on its own cloud computer, with one orchestrator merging the work.
+SlackJack is [Parallax](https://github.com/nickvasilescu/parallax) by Nick Vasilescu under a
+new name and logo. Parallax was built in a day by a swarm of coding agents working from a
+written product spec and a design system, each on its own cloud computer, with one
+orchestrator merging the work.
 The API notes in `docs/api/` and the rules in `CONTRIBUTING.md` and `docs/ui/README.md` are
 the same ones the agents worked from.
 
@@ -183,6 +185,7 @@ Read [`CONTRIBUTING.md`](CONTRIBUTING.md). Agents: read [`AGENTS.md`](AGENTS.md)
 
 [MIT](LICENSE).
 
-Parallax is an independent project. It is not affiliated with, endorsed by, or sponsored by
+SlackJack is an independent project. It is not affiliated with, endorsed by, or sponsored by
 any company whose models, products or services it mentions or connects to. Model and product
-names belong to their owners. The pictures in this repository were made with Parallax.
+names belong to their owners. The pictures in this repository were made with Parallax, the
+project SlackJack is based on, and the screenshots in `docs/screenshots/` still show its name.

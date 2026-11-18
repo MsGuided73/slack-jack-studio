@@ -3,7 +3,7 @@
  * This is an original brand. It reuses no name, logo, copy or artwork from any other product.
  */
 export const brand = {
-  name: "Parallax",
+  name: "SlackJack",
   tagline: "One studio for every generative model.",
   description:
     "An open-source creative studio. Pick a model, set the shot, see the price before you press Generate.",

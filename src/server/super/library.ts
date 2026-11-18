@@ -87,7 +87,7 @@ export interface Skill {
   category: string;
 }
 
-/** Built-in instruction packs. Written for Parallax. */
+/** Built-in instruction packs. Written for SlackJack. */
 export const BUILT_IN_SKILLS: Skill[] = [
   {
     id: "skill-storyboard",

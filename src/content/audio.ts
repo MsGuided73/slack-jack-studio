@@ -69,7 +69,7 @@ export const audioCopy = {
   pause: "Pause",
   seek: "Position",
   noResult: "The model sent nothing back. Your credits for it were returned.",
-  guestNote: "You are trying Parallax as a guest. Create an account to keep what you make.",
+  guestNote: "You are trying SlackJack as a guest. Create an account to keep what you make.",
   visitorNote: "Write a script and press Generate to hear it. Sign in to see your history.",
   createAccount: "Create account",
   signIn: "Sign in",

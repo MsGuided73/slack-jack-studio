@@ -180,7 +180,7 @@ const generateMedia: ToolDef = {
 const registryTools: ToolDef[] = [
   {
     name: "list_models",
-    description: "List the media models Parallax can run, optionally by kind.",
+    description: "List the media models SlackJack can run, optionally by kind.",
     input_schema: { type: "object", properties: { kind: { type: "string", enum: ["image", "video", "audio", "music"] } } },
     async run(_ctx, input) {
       const kind = typeof input.kind === "string" ? input.kind : null;

@@ -167,9 +167,9 @@ try {
       return `${before.trim()} -> ${(await b.evaluate(`document.querySelector('[data-testid="wallet-balance"]').textContent`)).trim()}`;
     }],
     ["redeem a promo code", async () => {
-      await fill("section#promo input", "hello-parallax");
+      await fill("section#promo input", "hello-slackjack");
       await b.click('section#promo button[type="submit"]');
-      await b.until(`document.querySelector("section#promo").innerText.includes("HELLO-PARALLAX")`, 6000, "promo line");
+      await b.until(`document.querySelector("section#promo").innerText.includes("HELLO-SLACKJACK")`, 6000, "promo line");
     }],
     ["a paid plan shows its renewal, a receipt, and can be cancelled and kept", async () => {
       const r = await post("/api/billing/subscription", { planId: "plus", interval: "month" });

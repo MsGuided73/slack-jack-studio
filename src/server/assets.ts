@@ -320,7 +320,7 @@ export function fileResponse(req: Request, row: AssetRow, opts: { poster?: boole
   }
 
   const mime = opts.poster ? "image/jpeg" : row.mime;
-  const name = `parallax-${row.id.slice(4, 14)}.${opts.poster ? "jpg" : (EXT[row.mime] ?? "bin")}`;
+  const name = `slackjack-${row.id.slice(4, 14)}.${opts.poster ? "jpg" : (EXT[row.mime] ?? "bin")}`;
   const headers = new Headers({
     "Content-Type": mime,
     "Accept-Ranges": "bytes",

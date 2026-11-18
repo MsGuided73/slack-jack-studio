@@ -6,7 +6,7 @@ import type { Interval } from "./plans";
 
 /**
  * Billing sits behind this interface so a real payment provider can replace the demo one
- * without touching plan logic. There is no real provider in Parallax: the `demo` provider
+ * without touching plan logic. There is no real provider in SlackJack: the `demo` provider
  * approves every charge at once and writes a receipt. No card data exists anywhere.
  */
 

@@ -94,7 +94,7 @@ try {
     ["a good promo code adds credits", async () => {
       const before = JSON.parse(await b.evaluate(`fetch("/api/auth/me").then((r) => r.text())`)).balance;
       await b.evaluate(`(() => { const i = document.querySelector("#promo-code"); i.focus(); i.select(); })()`);
-      await b.type("hello-parallax");
+      await b.type("hello-slackjack");
       await b.click(`${dialog} button`, "Apply");
       await b.until(`!!document.querySelector('${dialog} [role="status"]')`, 5000, "added");
       await b.shot("07-promo");

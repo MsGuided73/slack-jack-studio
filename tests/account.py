@@ -202,15 +202,15 @@ check("privacy: B's usage is empty", s == 200 and out["usage"]["totals"]["spent"
 
 # --- promo codes -----------------------------------------------------------------------
 before = balance(a)
-s, out = a.call("POST", "/api/billing/promo", {"code": " hello-parallax "})
+s, out = a.call("POST", "/api/billing/promo", {"code": " hello-slackjack "})
 check("promo: redeem", s == 200 and out.get("credits") == 25000 and out.get("balance") == before + 25000, f"{s} {str(out)[:120]}")
-s, out = a.call("POST", "/api/billing/promo", {"code": "HELLO-PARALLAX"})
+s, out = a.call("POST", "/api/billing/promo", {"code": "HELLO-SLACKJACK"})
 check("promo: second time is 409", s == 409 and code(out) == "already_redeemed", f"{s}")
 s, out = a.call("POST", "/api/billing/promo", {"code": "NOPE-NOT-REAL"})
 check("promo: unknown code is 404", s == 404, f"{s}")
 s, out = a.call("POST", "/api/billing/promo", {"code": 7})
 check("promo: wrong type is 400", s == 400, f"{s}")
-s, out = b.call("POST", "/api/billing/promo", {"code": "HELLO-PARALLAX"})
+s, out = b.call("POST", "/api/billing/promo", {"code": "HELLO-SLACKJACK"})
 check("promo: another member can redeem", s == 200, f"{s}")
 
 # --- referrals -------------------------------------------------------------------------

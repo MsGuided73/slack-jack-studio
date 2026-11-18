@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from "react";
-import { LogoMark } from "@/components/brand/logo";
+import { LogoMark, Wordmark } from "@/components/brand/logo";
 import { LoginDialog } from "@/components/entry/login-dialog";
 import { navWords, type MenuId } from "@/content/shell";
 import { navPrimary, navStudios, routes, type NavId, type NavLink } from "@/content/site";
@@ -183,8 +183,9 @@ export function FullNav({ active }: { active?: NavId }) {
 
   return (
     <header ref={headerRef} className="relative z-40 flex h-[52px] shrink-0 items-center gap-3 bg-page px-4">
-      <Link href={routes.home} aria-label={navWords.home} className="shrink-0 rounded-md">
+      <Link href={routes.home} aria-label={navWords.home} className="flex shrink-0 items-center gap-2 rounded-md">
         <LogoMark size={32} />
+        <Wordmark height={18} className="hidden sm:block" />
       </Link>
 
       <nav aria-label="Main" className="hidden h-7 min-w-0 flex-1 items-center overflow-x-auto scroll-none min-[900px]:flex">
