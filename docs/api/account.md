@@ -334,13 +334,13 @@ Renewals have descriptions starting with "Renewal:". There are no downloadable i
 
 ### `POST /api/billing/promo`
 
-`{ "code": "hello-parallax" }` (case and surrounding spaces do not matter)
-→ `200 { "code": "HELLO-PARALLAX", "credits": 25000, "balance": 2174900 }`
+`{ "code": "hello-slackjack" }` (case and surrounding spaces do not matter)
+→ `200 { "code": "HELLO-SLACKJACK", "credits": 25000, "balance": 2174900 }`
 
 Each code works once per member. Errors: `400` (empty), `404 invalid_code`,
 `409 already_redeemed`, `410 code_expired`, `410 code_used_up`, `429 rate_limited` (20 an hour).
 
-Codes that exist out of the box: `HELLO-PARALLAX` (25 credits, no limit) and `STUDIO-100`
+Codes that exist out of the box: `HELLO-SLACKJACK` (25 credits, no limit) and `STUDIO-100`
 (100 credits, first 1000 members). New codes are rows in `account_promo_codes`; there is no
 admin API for them yet.
 

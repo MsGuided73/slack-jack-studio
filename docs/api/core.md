@@ -653,7 +653,7 @@ Response: the bytes, with these headers:
 | Header | Value |
 |---|---|
 | `Content-Type` | The asset's `mime`, or `image/jpeg` for a poster. |
-| `Content-Disposition` | `inline` (or `attachment` with `download=1`), file name `parallax-<10 characters of the id>.<ext>`. |
+| `Content-Disposition` | `inline` (or `attachment` with `download=1`), file name `slackjack-<10 characters of the id>.<ext>`. |
 | `Accept-Ranges` | `bytes`. A `Range: bytes=…` request answers `206` with `Content-Range`, so video can seek. |
 | `Cache-Control` | `private, max-age=31536000, immutable`. A browser may keep showing a file from its cache after it was deleted or made private. |
 | `Content-Security-Policy`, `X-Content-Type-Options` | `sandbox; default-src 'none'` and `nosniff`. Stored bytes can never run as a page. |

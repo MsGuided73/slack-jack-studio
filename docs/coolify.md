@@ -1,10 +1,10 @@
-# Running Parallax on a Coolify server
+# Running SlackJack on a Coolify server
 
-Parallax runs as one container built from the `Dockerfile` at the top of this repository.
+SlackJack runs as one container built from the `Dockerfile` at the top of this repository.
 These steps put it on a server managed by [Coolify](https://coolify.io) at an address of
-your own, for example `https://parallax.example.com`.
+your own, for example `https://slackjack.example.com`.
 
-Read [`SECURITY.md`](../SECURITY.md) first. Parallax is young software.
+Read [`SECURITY.md`](../SECURITY.md) first. SlackJack is young software.
 
 ## 1. Add the app
 
@@ -23,7 +23,7 @@ Under **Persistent storage**, add a **volume mount**:
 
 | Field | Value |
 |---|---|
-| Name | `parallax-data` |
+| Name | `slackjack-data` |
 | Destination path | `/data` |
 
 Use a volume, not a directory on the server. The app runs as the `node` user, and Docker
@@ -36,7 +36,7 @@ Under **Environment variables**, set:
 
 | Variable | Value | Why |
 |---|---|---|
-| `PARALLAX_ORIGIN` | `https://parallax.example.com` | The public address. The server writes its links with it and accepts requests from pages at that address |
+| `PARALLAX_ORIGIN` | `https://slackjack.example.com` | The public address. The server writes its links with it and accepts requests from pages at that address |
 | `COOKIE_SECURE` | `1` | Marks the session cookie Secure, since the app is served over https |
 | `PARALLAX_DEMO_BILLING` | `off` | Closes the top-up button that adds credits for free |
 
@@ -53,8 +53,8 @@ connect outside apps by accident. Change it only after reading `docs/api/super.m
 
 ## 4. The address
 
-1. Under **Domains**, enter `https://parallax.example.com`.
-2. At your DNS provider, add an `A` record for `parallax` that points at the server's
+1. Under **Domains**, enter `https://slackjack.example.com`.
+2. At your DNS provider, add an `A` record for `slackjack` that points at the server's
    address.
 3. Deploy.
 
@@ -65,7 +65,7 @@ plain http, the server redirects to https, and the page loops.
 ## 5. Check it
 
 - The deployment's health check turns green. It asks the app for its home page.
-- `https://parallax.example.com` opens, and you can sign up.
+- `https://slackjack.example.com` opens, and you can sign up.
 - Redeploy once and sign in again. If your account is still there, the volume works.
 
 ## Updating
@@ -77,4 +77,4 @@ database migrations are applied when the app starts.
 
 - Node.js 22 and the built app, with the build-only packages removed.
 - `ffmpeg`, so the Cinema page can join shots into one film and uploads get thumbnails
-  and durations. Parallax works without it.
+  and durations. SlackJack works without it.

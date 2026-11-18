@@ -7,7 +7,7 @@ import { readFileSync } from "node:fs";
  * and its own key is set; otherwise that one service runs as a mock.
  *
  * The assistant itself can also run on an outside engine: a Hermes agent (SUPER_ENGINE=hermes).
- * Then Hermes does the thinking and Parallax serves it our tools; see `hermes.ts`.
+ * Then Hermes does the thinking and SlackJack serves it our tools; see `hermes.ts`.
  */
 
 export type Service = "llm" | "computer" | "connectors";

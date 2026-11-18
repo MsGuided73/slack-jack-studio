@@ -115,10 +115,10 @@ HOOK = f"http://127.0.0.1:{receiver.server_address[1]}"
 
 
 def signature_ok(secret, item):
-    ts = item["headers"].get("parallax-webhook-timestamp", "")
+    ts = item["headers"].get("slackjack-webhook-timestamp", "")
     want = "v1=" + hmac.new(secret.encode(), f"{ts}.".encode() + item["body"], hashlib.sha256).hexdigest()
     fresh = ts.isdigit() and abs(time.time() - int(ts)) < 300
-    return fresh and hmac.compare_digest(want, item["headers"].get("parallax-webhook-signature", ""))
+    return fresh and hmac.compare_digest(want, item["headers"].get("slackjack-webhook-signature", ""))
 
 
 def wait_received(pred, seconds=20):
@@ -424,7 +424,7 @@ else:
 
     s, out = a.call("POST", f"/api/developer/webhooks/{HOOK_ID}/test")
     d = out.get("delivery", {})
-    got = wait_received(lambda i: i["headers"].get("parallax-webhook-id") == d.get("id"), 5)
+    got = wait_received(lambda i: i["headers"].get("slackjack-webhook-id") == d.get("id"), 5)
     check("webhooks: test event delivered", s == 200 and d.get("status") == "delivered" and d.get("responseStatus") == 200 and got, f"{s} {str(out)[:200]}")
     check("webhooks: signature verifies", got and signature_ok(SECRET, got), "")
     check("webhooks: wrong secret does not verify", got and not signature_ok("whsec_wrong", got), "")

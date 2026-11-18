@@ -5,7 +5,7 @@
 export const cinema = {
   title: "Cinema",
   studioName: "Cinema studio",
-  homeLabel: "Back to the Parallax home page",
+  homeLabel: "Back to the SlackJack home page",
   headline: "Direct every shot",
   nav: {
     workspace: "Workspace",

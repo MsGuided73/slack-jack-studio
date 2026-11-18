@@ -2,8 +2,7 @@
 
 import { X } from "lucide-react";
 import { useEffect } from "react";
-import { LogoMark } from "@/components/brand/logo";
-import { brand } from "@/config/brand";
+import { LogoMark, Wordmark } from "@/components/brand/logo";
 import { promo } from "@/content/site";
 import { useNow } from "@/lib/browser";
 import { closeForGood, hideNow } from "@/lib/closable";
@@ -90,7 +89,7 @@ export function PromoBanner() {
           <span className="truncate">{promo.text}</span>
           <span className="flex shrink-0 items-center gap-[6px]">
             <LogoMark size={18} />
-            {brand.name}
+            <Wordmark height={13} />
           </span>
         </p>
       </div>

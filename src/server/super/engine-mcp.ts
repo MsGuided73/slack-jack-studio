@@ -27,9 +27,9 @@ type Json = Record<string, unknown>;
 type Id = string | number | null;
 
 const SUPPORTED = [...MODERN_VERSIONS, ...LEGACY_VERSIONS];
-const SERVER_INFO = { name: "parallax-supercomputer", title: "Parallax Supercomputer", version: "1.0.0" };
+const SERVER_INFO = { name: "slackjack-supercomputer", title: "SlackJack Supercomputer", version: "1.0.0" };
 const INSTRUCTIONS =
-  "Parallax's tools for its Supercomputer assistant: make images, video and audio, read the member's library, remember facts for them, " +
+  "SlackJack's tools for its Supercomputer assistant: make images, video and audio, read the member's library, remember facts for them, " +
   'and ask them questions. Every call needs "turn": the turn key from the current message\'s instructions.';
 const TURN = { type: "string", description: "The turn key from this message's instructions. Required on every call." };
 const MAX_BODY_CHARS = 1_000_000;
@@ -122,7 +122,7 @@ export async function handleEngineMcp(req: NextRequest, authorization: string | 
       if (err instanceof ApiError) return apiError(err.status, err.code, err.message);
       throw err;
     }
-    return apiError(401, "unauthorized", "A valid engine token is required.", { "WWW-Authenticate": 'Bearer realm="parallax"' });
+    return apiError(401, "unauthorized", "A valid engine token is required.", { "WWW-Authenticate": 'Bearer realm="slackjack"' });
   }
 
   let msg: unknown;

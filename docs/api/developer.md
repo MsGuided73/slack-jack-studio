@@ -1,12 +1,12 @@
 # Developer API, webhooks and MCP
 
-Developers and AI agents can use Parallax without the website. There are three parts:
+Developers and AI agents can use SlackJack without the website. There are three parts:
 
 - **Account routes** under `/api/developer/*`. These use the normal cookie session, and the developer screens call them. They manage API keys, the usage log and webhook endpoints.
 - **The public REST API** under `/api/v1/*`. It authenticates with `Authorization: Bearer <key>`. The OpenAPI document is at `/api/v1/openapi.json`.
 - **The MCP server** at `/api/mcp`, for AI agents. It uses the same bearer keys.
 
-Conventions are the same as the rest of Parallax:
+Conventions are the same as the rest of SlackJack:
 
 - Times are Unix milliseconds.
 - Credit amounts are **millicredits** (1000 = 1 credit).
@@ -132,7 +132,7 @@ The request log behind a usage table, newest first, plus totals per key for the 
 ```json
 {
   "id": "whk_...",
-  "url": "https://example.com/parallax-hook",
+  "url": "https://example.com/slackjack-hook",
   "description": "Production",
   "events": ["generation.succeeded", "generation.failed"],
   "enabled": true,
@@ -255,10 +255,10 @@ Puts a `delivered` or `failed` delivery back in the queue, with a fresh set of a
 ### How deliveries work (for the docs screen)
 
 - Each delivery is a `POST` of JSON (the `payload` above) with these headers:
-  - `Parallax-Webhook-Id`: the delivery id. It is the same on every retry, so receivers can drop repeats.
-  - `Parallax-Webhook-Event`: the event name.
-  - `Parallax-Webhook-Timestamp`: Unix **seconds**.
-  - `Parallax-Webhook-Signature`: `v1=` followed by the hex HMAC-SHA256 of `"<timestamp>.<raw body>"`, keyed with the endpoint's secret.
+  - `SlackJack-Webhook-Id`: the delivery id. It is the same on every retry, so receivers can drop repeats.
+  - `SlackJack-Webhook-Event`: the event name.
+  - `SlackJack-Webhook-Timestamp`: Unix **seconds**.
+  - `SlackJack-Webhook-Signature`: `v1=` followed by the hex HMAC-SHA256 of `"<timestamp>.<raw body>"`, keyed with the endpoint's secret.
 - To verify a delivery, compute the same HMAC, compare it in constant time, and reject timestamps older than 5 minutes.
 - Any 2xx answer counts as delivered. Anything else, a timeout (10 s) or a connection error is retried after 30 s, 2 min, 10 min, 1 h and 6 h. After 6 attempts the delivery is `failed`.
 - Redirects are not followed.
@@ -268,7 +268,7 @@ Example receiver check (Python):
 
 ```python
 expected = "v1=" + hmac.new(secret.encode(), f"{ts}.".encode() + raw_body, hashlib.sha256).hexdigest()
-ok = hmac.compare_digest(expected, request.headers["Parallax-Webhook-Signature"])
+ok = hmac.compare_digest(expected, request.headers["SlackJack-Webhook-Signature"])
 ```
 
 ---
@@ -536,7 +536,7 @@ On every revision:
 - Notifications get `202` with an empty body.
 - `GET` and `DELETE` get `405`.
 - A request with an `Origin` header from another site gets `403`.
-- A missing or bad key gets `401` (Parallax error shape, with `WWW-Authenticate: Bearer`).
+- A missing or bad key gets `401` (SlackJack error shape, with `WWW-Authenticate: Bearer`).
 - Rate limit headers and the request log work as for REST.
 
 Tools (`tools/list`):

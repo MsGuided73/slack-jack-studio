@@ -26,7 +26,7 @@ try {
       await b.shot("01-mcp");
       await b.shot("01b-mcp-full", { full: true });
       const h1 = await b.evaluate(`document.querySelector("h1").innerText`);
-      if (!/parallax/i.test(h1)) throw new Error(`hero says "${h1}"`);
+      if (!/slackjack/i.test(h1)) throw new Error(`hero says "${h1}"`);
     }],
     ["no sideways scroll on /mcp", noSideways],
     ["the server address is built from this origin", async () => {
@@ -59,7 +59,7 @@ try {
     }],
     ["the add button opens a dialog and Escape closes it", async () => {
       await b.evaluate(`window.scrollTo(0, 0)`);
-      await b.click("button", "Add Parallax to your agent");
+      await b.click("button", "Add SlackJack to your agent");
       await b.until(`!!document.querySelector('[role="dialog"] pre')`, 3000, "dialog with snippet");
       await b.sleep(300);
       await b.shot("04-dialog");
@@ -80,7 +80,7 @@ try {
     }],
     ["the console asks a visitor to sign in", async () => {
       await open(`${base}/developer`);
-      await b.until(`document.body.innerText.includes("Build with Parallax")`, 10000, "explainer");
+      await b.until(`document.body.innerText.includes("Build with SlackJack")`, 10000, "explainer");
       await b.sleep(300);
       await b.shot("05-console-signed-out");
       await noSideways();

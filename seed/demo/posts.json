@@ -1,27 +1,27 @@
 {
  "members": [
   {
-   "handle": "parallax-studio",
-   "name": "Parallax Studio",
-   "bio": "The house account. Everything here was made with Parallax.",
+   "handle": "slackjack-studio",
+   "name": "SlackJack Studio",
+   "bio": "The house account. Everything here was made with SlackJack.",
    "avatar": "community-feed-mark.webp"
   },
   {
    "handle": "northlight",
    "name": "Northlight",
-   "bio": "Demo account. Landscapes and weather, made with Parallax.",
+   "bio": "Demo account. Landscapes and weather, made with SlackJack.",
    "avatar": "community-creators-mark.webp"
   },
   {
    "handle": "paper-kite",
    "name": "Paper Kite",
-   "bio": "Demo account. Paper, clay and small odd things, made with Parallax.",
+   "bio": "Demo account. Paper, clay and small odd things, made with SlackJack.",
    "avatar": "community-saved-mark.webp"
   },
   {
    "handle": "slow-tide",
    "name": "Slow Tide",
-   "bio": "Demo account. People and quiet moments, made with Parallax.",
+   "bio": "Demo account. People and quiet moments, made with SlackJack.",
    "avatar": "community-following-mark.webp"
   }
  ],
@@ -33,7 +33,7 @@
     "animals",
     "cinematic"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "21:9",
    "prompt": "Wild horses galloping through dust at sunset, silhouettes, wide shot, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -59,7 +59,7 @@
     "cinematic",
     "night"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "21:9",
    "prompt": "A woman in a green coat and a man in a brown jacket walking through a neon-lit night market, anamorphic still, shallow depth of field, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -137,7 +137,7 @@
     "fantasy",
     "landscape"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "16:9",
    "prompt": "A glass greenhouse glowing from within on a floating island above the clouds at dusk, dreamlike, highly detailed, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -175,7 +175,7 @@
    "tags": [
     "cinematic"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "16:9",
    "prompt": "Behind the scenes on a film set at night, a monitor glowing, crew in silhouette, warm practical lights, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -187,7 +187,7 @@
    "tags": [
     "cinematic"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "16:9",
    "prompt": "A film crew in silhouette around a camera crane against a huge orange sunset, wide shot, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -407,7 +407,7 @@
     "surreal",
     "night"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "16:9",
    "prompt": "A giant koi fish swimming through the air above a quiet city street at night, lantern light, surreal, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -472,7 +472,7 @@
     "surreal",
     "portrait"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "1:1",
    "prompt": "A woman floating a metre above a wheat field, dress and hair drifting weightlessly, golden hour, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -485,7 +485,7 @@
     "action",
     "sea"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "16:9",
    "prompt": "A surfer riding inside a turquoise wave barrel, spray frozen in the air, action shot, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -562,7 +562,7 @@
     "portrait",
     "sea"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "1:1",
    "prompt": "A woman in a flowing dress floating underwater, sunbeams from above, small bubbles, serene, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -614,7 +614,7 @@
     "cinematic",
     "scifi"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "16:9",
    "prompt": "An astronaut standing in a field of tall grass at sunrise, soft haze, wide shot, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -627,7 +627,7 @@
     "portrait",
     "sea"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "16:9",
    "prompt": "A red-haired woman in a yellow raincoat on a cliff edge above a stormy sea, dramatic sky, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -639,7 +639,7 @@
    "tags": [
     "action"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "1:1",
    "prompt": "A person in everyday clothes taking off into the sky like a superhero, city street below, dynamic low angle, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -703,7 +703,7 @@
    "tags": [
     "portrait"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "16:9",
    "prompt": "Portrait of a woman with freckles wearing a crown of dried flowers, golden hour, editorial photograph, shallow depth of field, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -742,7 +742,7 @@
     "cinematic",
     "noir"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "16:9",
    "prompt": "A detective in a hat and long coat standing in a rain-soaked cobblestone alley lit by a soft red glow, film noir mood, bare brick walls, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -755,7 +755,7 @@
     "cinematic",
     "landscape"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "16:9",
    "prompt": "Wide still of a lone figure with a lantern crossing a salt flat at blue hour, anamorphic lens flare, epic scale, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",
@@ -793,7 +793,7 @@
     "scifi",
     "night"
    ],
-   "member": "parallax-studio",
+   "member": "slackjack-studio",
    "model": "flux-schnell",
    "aspect": "5:4",
    "prompt": "A silhouetted figure facing a giant glowing doorway in a desert at night, dramatic film teaser still, cinematic photograph, rich colour, soft film grain, no text, no lettering, no logo, no watermark",

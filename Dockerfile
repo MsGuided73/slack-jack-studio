@@ -1,4 +1,4 @@
-# Parallax as one container, for a server run by Coolify (or plain Docker).
+# SlackJack as one container, for a server run by Coolify (or plain Docker).
 # How to deploy it: docs/coolify.md
 
 # ---- build: install everything, build the app, then drop the build-only packages ----
@@ -12,7 +12,7 @@ RUN npm run build && npm prune --omit=dev
 
 # ---- run ----
 FROM node:22-bookworm-slim
-# ffmpeg is optional for Parallax, but with it the Cinema page can join shots into one film
+# ffmpeg is optional for SlackJack, but with it the Cinema page can join shots into one film
 # and uploads get real thumbnails and durations.
 RUN apt-get update \
   && apt-get install -y --no-install-recommends ffmpeg \

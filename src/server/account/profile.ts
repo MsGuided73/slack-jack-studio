@@ -15,7 +15,7 @@ import { ApiError, badRequest, notFound } from "@/server/errors";
 const HANDLE = /^[a-z0-9](?:[a-z0-9_-]{1,28})[a-z0-9]$/;
 // Handles that would look official or collide with app paths.
 const RESERVED = new Set([
-  "admin", "administrator", "api", "app", "account", "billing", "help", "support", "parallax", "staff", "team", "root",
+  "admin", "administrator", "api", "app", "account", "billing", "help", "support", "parallax", "slackjack", "staff", "team", "root",
   "settings", "login", "logout", "signup", "guest", "me", "explore", "library", "pricing", "about", "system", "official", "null", "undefined",
 ]);
 

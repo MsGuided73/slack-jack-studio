@@ -3,7 +3,7 @@
 import { AtSign, Eye, EyeOff, Gift, Info, LockKeyhole } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useId, useState, type FormEvent } from "react";
-import { LogoMark } from "@/components/brand/logo";
+import { LogoMark, Wordmark } from "@/components/brand/logo";
 import { loginCopy as c } from "@/content/entry";
 import { errorMessage } from "@/lib/api";
 import { logIn, signUp, useSession } from "@/lib/session";
@@ -22,7 +22,7 @@ export function safeNext(next: string | null | undefined): string | null {
 const row = "flex h-12 w-full items-center rounded-xl text-base leading-5 font-semibold transition-colors duration-150";
 const field = cn(row, "gap-[6px] bg-border-subtle px-3 font-medium focus-within:bg-border-default hover:bg-border-default");
 
-/** The two-line heading: "Start making / with ▣ Parallax". */
+/** The two-line heading: "Start making / with ▣ SlackJack". */
 export function LoginHeading({ mode, as: Tag = "h2", id }: { mode: LoginMode; as?: "h1" | "h2"; id?: string }) {
   return (
     <Tag id={id} className="flex flex-col items-center text-center font-sans text-[32px] leading-9 font-semibold tracking-[-0.0375em] text-text-primary">
@@ -31,7 +31,7 @@ export function LoginHeading({ mode, as: Tag = "h2", id }: { mode: LoginMode; as
         {c.withWord[mode]}
         <span className="flex items-center gap-2 text-brand">
           <LogoMark size={28} />
-          {c.brandName}
+          <Wordmark height={24} />
         </span>
       </span>
     </Tag>

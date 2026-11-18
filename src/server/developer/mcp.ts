@@ -20,9 +20,9 @@ import { balanceOut, createGeneration, findModel, getGeneration, listFiles, list
 export const MODERN_VERSIONS = ["2026-07-28"];
 export const LEGACY_VERSIONS = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [...MODERN_VERSIONS, ...LEGACY_VERSIONS];
-const SERVER_INFO = { name: "parallax", title: "Parallax", version: "1.0.0" };
+const SERVER_INFO = { name: "slackjack", title: "SlackJack", version: "1.0.0" };
 const INSTRUCTIONS =
-  "Parallax makes images, video and audio. Call list_models to find a model, get_model to see its controls and media slots, " +
+  "SlackJack makes images, video and audio. Call list_models to find a model, get_model to see its controls and media slots, " +
   "quote to check the price, then generate. Generations run in the background: poll get_generation until the status is " +
   "succeeded or failed. Prices are in millicredits (1000 = 1 credit).";
 
@@ -70,7 +70,7 @@ const TOOLS: Tool[] = [
   {
     name: "list_models",
     title: "List models",
-    description: "Lists the models Parallax can run. Filter by kind: image, video, audio or music.",
+    description: "Lists the models SlackJack can run. Filter by kind: image, video, audio or music.",
     scope: "read",
     readOnly: true,
     inputSchema: { type: "object", properties: { kind: { type: "string", enum: ["image", "video", "audio", "music"] } } },
@@ -177,7 +177,7 @@ export async function handleMcp(req: NextRequest, authorization: string | null):
     ({ auth, rate } = openKey(authorization));
   } catch (err) {
     const res = errorResponse(err);
-    res.headers.set("WWW-Authenticate", 'Bearer realm="parallax"');
+    res.headers.set("WWW-Authenticate", 'Bearer realm="slackjack"');
     return res;
   }
   if (!rate.allowed) {

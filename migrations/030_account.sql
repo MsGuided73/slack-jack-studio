@@ -92,5 +92,5 @@ CREATE TABLE account_prefs (
 );
 
 -- Demo promo codes, so the feature works out of the box.
-INSERT INTO account_promo_codes (code, credits, max_uses, created_at) VALUES ('HELLO-PARALLAX', 25000, NULL, 0);
+INSERT INTO account_promo_codes (code, credits, max_uses, created_at) VALUES ('HELLO-SLACKJACK', 25000, NULL, 0);
 INSERT INTO account_promo_codes (code, credits, max_uses, created_at) VALUES ('STUDIO-100', 100000, 1000, 0);
