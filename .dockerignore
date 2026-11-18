@@ -1,0 +1,16 @@
+.git
+node_modules
+.next
+out
+data
+deploy/run
+ui-shots
+coverage
+.env*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+__pycache__
+*.pyc
+docs/screenshots
+tests
