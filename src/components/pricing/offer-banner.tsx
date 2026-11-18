@@ -17,7 +17,7 @@ const BOX_FILL = {
     "radial-gradient(ellipse 55% 95% at 73% 50%, #EF1DBA99 0%, #ED157200 100%), radial-gradient(ellipse 25% 42% at 85% 37%, #FFFFFF99 0%, #FFFFFF00 100%), radial-gradient(ellipse 33% 70% at 12% 76%, #B01DEF99 0%, #CE19B04C 50%, #ED157200 100%)",
 };
 
-/** The launch offer above the heading. Counts down to `promo.endsAt`; gone once it ends. */
+/** The offer above the heading. Counts down to `promo.endsAt`; gone once it ends. */
 export function OfferBanner() {
   const now = useNow();
   if (!promo.enabled) return null;
@@ -31,7 +31,7 @@ export function OfferBanner() {
 
   return (
     <section
-      aria-label="Launch offer"
+      aria-label="Offer"
       className="relative mx-auto flex w-full max-w-[1088px] flex-col items-center justify-center gap-6 overflow-hidden rounded-4xl px-4 py-6 desktop:min-h-[174px] desktop:flex-row desktop:gap-[112px] desktop:px-0 desktop:py-0"
     >
       <Artwork

@@ -7,7 +7,7 @@ import { brand } from "@/config/brand";
 
 export const pricingCopy = {
   offer: {
-    lineOne: "Launch week is on",
+    lineOne: "An offer is on",
     lineTwoLead: "Redeem code",
     countdownLabel: "Offer ends in...",
     units: { hours: "hours", minutes: "minutes", seconds: "seconds" },
